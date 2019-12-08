@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <script defer src="sanitizer.js"></script>
+        <title></title>
+    </head>
+    <body>
+        <div id="container">
+            <span>Welcome to <a target="_blank" href="https://github.com/JTinkers/9gag-sanitizer">9gag sanitizer <i class="fab fa-github"></i></a><br>
+            <br>
+            You can adjust search patterns and behavior of the sanitizer in the settings below.</span>
+            <span>Patterns are case insensitive by default.<br>
+            You can read more about Regex <a target="_blank" href="https://en.wikipedia.org/wiki/Regular_expression">here</a>.</span>
+            <div id="patterns">
+            </div>
+            <div id="add-button-container">
+                <a id="add-button" href="#"><i class="fas fa-plus"></i></a>
+            </div>
+        </div>
+    </body>
+</html>
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+    @import url('https://use.fontawesome.com/releases/v5.11.2/css/all.css');
+
+    *
+    {
+        box-sizing: border-box;
+        line-height: 1;
+    }
+
+    body
+    {
+        padding: 32px;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 16px;
+    }
+
+    a
+    {
+        font-weight: bold;
+        text-decoration: none;
+        color: #20418E;
+    }
+
+    input[type=text]
+    {
+        border: 1px solid #E4E8F2;
+        border-radius: 3px;
+        padding: 8px;
+        font-family: inherit;
+        flex-grow: 1;
+    }
+
+    #container
+    {
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #container > :not(:last-child)
+    {
+        border-bottom: 1px solid #E4E8F2;
+        margin-bottom: 8px;
+        padding-bottom: 8px;
+    }
+
+    #patterns
+    {
+        display: flex;
+        flex-direction: column;
+        background: #fafafa;
+        padding: 0 8px;
+    }
+
+    #patterns > :not(:last-child)
+    {
+        margin-bottom: 8px;
+    }
+
+    .pattern
+    {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+
+    .pattern > :not(:last-child)
+    {
+        margin-right: 16px;
+    }
+
+    .remove-button
+    {
+        color: #AA176A;
+    }
+
+    #add-button-container
+    {
+        display: flex;
+    }
+
+    #add-button
+    {
+        margin-top: 16px;
+        margin-left: auto;
+        margin-right: auto;
+        color: #64198D;
+    }
+
+    .checkbox-group
+    {
+        padding: 6px;
+        border-radius: 3px;
+        border: 1px solid #E4E8F2;
+    }
+
+    .checkbox-group input[type="checkbox"]
+    {
+        display: none;
+    }
+
+    .checkbox-group span
+    {
+        display: flex;
+    }
+
+    .checkbox-group span:before
+    {
+        font-size: 20px;
+        font-family: "Font Awesome 5 Free";
+        content: "\f14a";
+        margin-right: 8px;
+    }
+
+    .checkbox-group label > input[type="checkbox"]:checked:disabled + span:before
+    {
+        content: "\f14a";
+        color: $color-background-3;
+        font-weight: 900;
+    }
+
+    .checkbox-group label > input[type="checkbox"]:disabled + span:before
+    {
+        content: "\f0c8";
+        color: $color-background-3;
+    }
+
+    .checkbox-group label > input[type="checkbox"]:checked + span:before
+    {
+        content: "\f14a";
+        color: $color-secondary-1-2;
+        font-weight: 900;
+    }
+
+    .checkbox-group label > input[type="checkbox"] + span:before
+    {
+        content: "\f0c8";
+    }
+</style>
