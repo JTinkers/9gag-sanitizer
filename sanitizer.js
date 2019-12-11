@@ -43,7 +43,8 @@ function refresh()
 
         pattern.element = element
 
-        list.appendChild(element)
+        if(list)
+            list.appendChild(element)
     }
 
     var removeButtons = document.querySelectorAll(".remove-button")
